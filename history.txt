@@ -1,0 +1,87 @@
+    1  top
+    2  kill 37324
+    3  kill 37325
+    4  top
+    5  lsblk
+    6  sudo mkfs.xfs /dev/nvme1n1
+    7  lsblk
+    8  sudo mkdir /mnt/data
+    9  sudo mount /dev/nvme1n1 /mnt/data
+   10  df -h
+   11  sudo blkid /dev/nvme1n1
+   12  sudo vi /etc/fstab
+   13  sudo umount /mnt/data
+   14  sudo mount -a
+   15  df -h
+   16  sudo yum install -y httpd
+   17  sudo systemctl start httpd
+   18  sudo systemctl enable httpd
+   19  sudo less /var/log/httpd/access_log
+   20  sudo less /var/log/httpd/error_log
+   21  sudo tail -f /var/log/httpd/access_log /var/log/httpd/error_log
+   22  pwd
+   23  history>>history.txt
+    1  sudo yum update -y
+    2  sudo yum install -y httpd
+    3  sudo systemctl start httpd
+    4  sudo systemctl enable httpd
+    5  sudo systemctl status httpd
+    6  aws ec2 describe-instances --filters "Name=instance-id,Values=i-02a46376c9b09ccb6"
+    7  sudo yum install -y git
+    8  sudo yum install -y httpd
+    9  sudo yum install -y mc
+   10  sudo yum install -y git
+   11  sudo yum install -y htop
+   12  sudo yum install -y nano
+   13  sudo yum install -y curl
+   14  sudo yum install -y wget
+   15  sudo yum install -y ansible
+   16  sudo yum install -y ncdu
+   17  sudo yum install -y httpd
+   18  sudo amazon-linux-extras enable epel
+   19  sudo yum install -y epel-release
+   20  cat /etc/os-release
+   21  sudo yum groupinstall -y "Development Tools"
+   22  sudo yum install -y curl
+   23  curl -LO https://dev.yorhel.nl/download/ncdu-2.5.tar.gz
+   24  tar -xvzf ncdu-2.5.tar.gz
+   25  cd ncdu-2.5
+   26  ./configure
+   27  ls
+   28  make
+   29  cat README.md 
+   30  ls
+   31  cd src/
+   32  ls
+   33  ./configure
+   34  make
+   35  cd ..
+   36  ls -ltr
+   37  ls
+   38  pwd
+   39  ls 
+   40  ./configure
+   41  make
+   42  curl -LO https://dev.yorhel.nl/download/ncdu-linux-x86_64-2.5.tar.gz
+   43  tar -xvzf ncdu-linux-x86_64-2.5.tar.gz
+   44  ls
+   45  cd ..
+   46  ls -ltr
+   47  rm -rf nc*
+   48  ls -ltr
+   49  curl -LO https://dev.yorhel.nl/download/ncdu-2.8.1-linux-x86_64.tar.gz
+   50  tar -xvzf ncdu-2.8.1-linux-x86_64.tar.gz
+   51  ls ncdu
+   52  sudo mv ncdu /usr/local/bin/
+   53  ncdu --version
+   54  ps
+   55  ps -eaf
+   56  ps -eaf| grep 'httpd' | grep -v grep
+   57  sudo yum install -y stress
+   58  stress cpu
+   59  stress -h
+   60  stress --help
+   61  stress --cpu 3
+   62  ls -la
+   63  history
+   64  history>>history.txt 
