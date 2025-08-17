@@ -1,0 +1,2 @@
+*/5 * * * * /home/ec2-user/linux_p2/script.sh >> /home/ec2-user/linux_p2/log/backup.log 2>> /home/ec2-user/linux_p2/log/err_backup.log
+*/5 * * * * /home/ec2-user/linux_p2/script_with_move_to_S3.sh >> /home/ec2-user/linux_p2/log/backup.log 2>> /home/ec2-user/linux_p2/log/err_backup.log
