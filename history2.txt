@@ -1,0 +1,262 @@
+    1  sudo yum update -y
+    2  sudo yum install -y httpd
+    3  sudo systemctl start httpd
+    4  sudo systemctl enable httpd
+    5  sudo systemctl status httpd
+    6  aws ec2 describe-instances --filters "Name=instance-id,Values=i-02a46376c9b09ccb6"
+    7  sudo yum install -y git
+    8  sudo yum install -y httpd
+    9  sudo yum install -y mc
+   10  sudo yum install -y git
+   11  sudo yum install -y htop
+   12  sudo yum install -y nano
+   13  sudo yum install -y curl
+   14  sudo yum install -y wget
+   15  sudo yum install -y ansible
+   16  sudo yum install -y ncdu
+   17  sudo yum install -y httpd
+   18  sudo amazon-linux-extras enable epel
+   19  sudo yum install -y epel-release
+   20  cat /etc/os-release
+   21  sudo yum groupinstall -y "Development Tools"
+   22  sudo yum install -y curl
+   23  curl -LO https://dev.yorhel.nl/download/ncdu-2.5.tar.gz
+   24  tar -xvzf ncdu-2.5.tar.gz
+   25  cd ncdu-2.5
+   26  ./configure
+   27  ls
+   28  make
+   29  cat README.md 
+   30  ls
+   31  cd src/
+   32  ls
+   33  ./configure
+   34  make
+   35  cd ..
+   36  ls -ltr
+   37  ls
+   38  pwd
+   39  ls 
+   40  ./configure
+   41  make
+   42  curl -LO https://dev.yorhel.nl/download/ncdu-linux-x86_64-2.5.tar.gz
+   43  tar -xvzf ncdu-linux-x86_64-2.5.tar.gz
+   44  ls
+   45  cd ..
+   46  ls -ltr
+   47  rm -rf nc*
+   48  ls -ltr
+   49  curl -LO https://dev.yorhel.nl/download/ncdu-2.8.1-linux-x86_64.tar.gz
+   50  tar -xvzf ncdu-2.8.1-linux-x86_64.tar.gz
+   51  ls ncdu
+   52  sudo mv ncdu /usr/local/bin/
+   53  ncdu --version
+   54  ps
+   55  ps -eaf
+   56  ps -eaf| grep 'httpd' | grep -v grep
+   57  sudo yum install -y stress
+   58  stress cpu
+   59  stress -h
+   60  stress --help
+   61  stress --cpu 3
+   62  ls -la
+   63  history
+   64  history>>history.txt 
+   65  ls -la
+   66  cat history.txt 
+   67  pwd
+   68  ls history.txt 
+   69  ls /home/ec2-user/history.txt
+   70  scp -i ~/.ssh/my_EC2_aws_001.pem ec2-user@52.57.45.43>:/home/ec2-user/history.txt /c/IVZE0115_DATA/personal/GIT/DevOPS_course_Brave_IT/DevOps_Basics_7_2_SCM_Git/history.txt
+   71  exit
+   72  ls
+   73  pwd
+   74  ls
+   75  exit
+   76  ls history.txt 
+   77  pwd
+   78  exit
+   79  top
+   80  kill 37324
+   81  kill 37325
+   82  top
+   83  lsblk
+   84  sudo mkfs.xfs /dev/nvme1n1
+   85  lsblk
+   86  sudo mkdir /mnt/data
+   87  sudo mount /dev/nvme1n1 /mnt/data
+   88  df -h
+   89  sudo blkid /dev/nvme1n1
+   90  sudo vi /etc/fstab
+   91  sudo umount /mnt/data
+   92  sudo mount -a
+   93  df -h
+   94  sudo yum install -y httpd
+   95  sudo systemctl start httpd
+   96  sudo systemctl enable httpd
+   97  sudo less /var/log/httpd/access_log
+   98  sudo less /var/log/httpd/error_log
+   99  sudo tail -f /var/log/httpd/access_log /var/log/httpd/error_log
+  100  pwd
+  101  history>>history.txt
+  102  ls -la
+  103  cat history.txt
+  104  pwd
+  105  ls
+  106  rm ncdu-2.8.1-linux-x86_64.tar.gz 
+  107  mkdir ~/linux_p2
+  108  ls
+  109  cd linux_p2/
+  110  exit
+  111  ls
+  112  cd linux_p2/
+  113  touch command.sh
+  114  vi command.sh 
+  115  ls -la
+  116  chmod +x command.sh 
+  117  ls -la
+  118  ./command.sh 
+  119  ls -la
+  120  cat 20.txt 
+  121  touch script.sh
+  122  vi script.sh 
+  123  chmod +x script.sh 
+  124  ls -la
+  125  ./script.sh 
+  126  ls -la
+  127  ls -la backup/
+  128  la -la log/
+  129  ls -la log/
+  130  ls -la log/backup.log 
+  131  cat log/backup.log 
+  132  cat log/
+  133  ls -la log/backup.log 
+  134  ls -la log/
+  135  ls -la log/err_backup.log 
+  136  cat log/err_backup.log 
+  137  ls -la
+  138  ls -la backup/
+  139  ls -la
+  140  ./script.sh 
+  141  ls -la
+  142  ls -la old_backup/
+  143  vi script.sh 
+  144  ls -ls
+  145  ls -la backup/
+  146  ./script.sh 
+  147  ls -la
+  148  ls -la backup/
+  149  ls -la old_backup/
+  150  crontab -e
+  151  sudo yum install -y crontab
+  152  sudo yum install -y cronie
+  153  sudo systemctl enable crond
+  154  sudo systemctl start crond
+  155  crontab -e
+  156  ls -la /home/ec2-user/linux_p2/
+  157  ls -la /home/ec2-user/linux_p2/log/backup.log
+  158  ls -la /home/ec2-user/linux_p2/log/err_backup.log
+  159  crontab -e
+  160  ls -la backup/
+  161  aws s3api create-bucket   --bucket ivze0115-ec2-backup-bucket-2025   --region eu-central-1   --create-bucket-configuration LocationConstraint=eu-central-1
+  162  aws s3api create-bucket   --bucket ivze0115-ec2-backup-bucket-2025   --region eu-central-1   --create-bucket-configuration LocationConstraint=eu-central-1
+  163  ls
+  164  aws s3 cp command.sh s3://ivze0115-ec2-backup-bucket-2025
+  165  cp script.sh script_with_move_to_S3.sh 
+  166  vi script_with_move_to_S3.sh 
+  167  ls -la
+  168  ./script_with_move_to_S3.sh 
+  169  ls -la
+  170  ls -la log/
+  171  cat log/backup.log 
+  172  ls -la
+  173  exit
+  174  ls -la
+  175  cd linux_p2/
+  176  pwd
+  177  ls -la
+  178  crontab -3
+  179  crontab -e
+  180  exit
+  181  cat /etc/os-release
+  182  sudo yum list installed nginx
+  183  sudo rpm -qa | grep -i nginx
+  184  command -v nginx >/dev/null 2>&1 && echo "nginx binary found" || echo "nginx not found"
+  185  nginx -v
+  186  sudo dnf update -y
+  187  sudo dnf install -y nginx
+  188  sudo systemctl enable --now nginx
+  189  journalctl -xeu nginx.service
+  190  sudo ss -ltnp | grep ':80
+  191  exit
+  192  sudo ss -ltnp | grep ':80'
+  193  sudo systemctl enable --now nginx
+  194  sudo systemctl stop httpd
+  195  sudo systemctl enable --now nginx
+  196  sudo ss -ltnp | grep -w ':80'
+  197  sudo dnf install -y httpd-tools
+  198  sudo htpasswd -c /etc/nginx/.htpasswd oleh
+  199  cat /etc/nginx/.htpasswd
+  200  ls /etc/nginx/conf.d/my_site.conf
+  201  ls /etc/nginx/conf.d/
+  202  ls /etc/nginx/
+  203  touch /etc/nginx/conf.d/my_site.conf
+  204  sudo touch /etc/nginx/conf.d/my_site.conf
+  205  ls /etc/nginx/conf.d/my_site.conf
+  206  vi /etc/nginx/conf.d/my_site.conf
+  207  ls -la /etc/nginx/conf.d/my_site.conf
+  208  sudo chmod 755 /etc/nginx/conf.d/my_site.conf
+  209  vi /etc/nginx/conf.d/my_site.conf
+  210  ls -la /etc/nginx/conf.d/my_site.conf
+  211  vi /etc/nginx/conf.d/my_site.conf
+  212  sudo vi /etc/nginx/conf.d/my_site.conf
+  213  sudo nginx -t
+  214  sudo systemctl restart nginx
+  215  ls /etc/nginx/conf.d/status.conf
+  216  sudo touch /etc/nginx/conf.d/status.conf
+  217  sudo vi /etc/nginx/conf.d/status.conf
+  218  sudo nginx -t
+  219  sudo systemctl reload nginx
+  220  curl http://127.0.0.1/status
+  221  hostname
+  222  sudo dnf install -y certbot python3-certbot-nginx
+  223  sudo certbot --nginx -d 213.110.136.46
+  224  hostname
+  225  sudo yum install -y curl
+  226  sudo certbot --nginx -d ivze0115.ddns-ip.net
+  227  ls /etc/nginx/conf.d/
+  228  ls /etc/nginx/conf.d/my_site.conf 
+  229  cat /etc/nginx/conf.d/my_site.conf 
+  230  sudo vi /etc/nginx/conf.d/my_site.conf 
+  231  sudo nginx -t
+  232  sudo systemctl reload nginx
+  233  sudo certbot --nginx -d ivze0115.ddns-ip.net
+  234  ls /etc/nginx/conf.d/ssl.conf
+  235  ls /etc/nginx/conf.d/
+  236  sudo touch /etc/nginx/conf.d/ssl.conf
+  237  sudo vi /etc/nginx/conf.d/ssl.conf
+  238  ls /etc/nginx/ssl/
+  239  ls /etc/nginx/conf.d/
+  240  ls /etc/letsencrypt/live/ivze0115.ddns-ip.net/
+  241  sudo ls /etc/letsencrypt/live/ivze0115.ddns-ip.net/
+  242  sudo grep -R "ssl_certificate" /etc/nginx/conf.d/
+  243  sudo certbot renew --dry-run
+  244  sudo ls /etc/nginx/conf.d/ssl.conf
+  245  sudo vi /etc/nginx/conf.d/ssl.conf
+  246  sudo dnf groupinstall "Development Tools" -y
+  247  sudo dnf install pcre2-devel zlib-devel openssl-devel git -y
+  248  NGINX_VERSION=1.26.2   # latest stable (check http://nginx.org/en/download.html)
+  249  wget http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz
+  250  tar zxvf nginx-$NGINX_VERSION.tar.gz
+  251  cd nginx-$NGINX_VERSION
+  252  git clone https://github.com/yaoweibin/nginx_upstream_check_module.git
+  253  patch -p1 < nginx_upstream_check_module/check_1.20.1+.patch
+  254  ./configure --prefix=/etc/nginx             --sbin-path=/usr/sbin/nginx             --conf-path=/etc/nginx/nginx.conf             --with-http_ssl_module             --with-http_v2_module             --add-module=./nginx_upstream_check_module
+  255  make
+  256  sudo make install
+  257  uname -a
+  258  nginx -V
+  259  ls
+  260  cd ~
+  261  ls
+  262  history >> history2.txt
