@@ -1,0 +1,38 @@
+docker --version
+
+docker pull postgres:13
+
+docker run -d --name pg13 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres:13
+
+docker exec -it pg13 psql -U postgres
+
+CREATE DATABASE itca;
+
+CREATE USER student WITH PASSWORD '12345aA!' SUPERUSER;
+
+\c itca
+
+CREATE SCHEMA devops4 AUTHORIZATION student;
+
+CREATE TABLE devops4.students (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    age INT
+);
+
+CREATE TABLE devops4.courses (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(100),
+    credits INT
+);
+
+CREATE TABLE devops4.enrollments (
+    student_id INT REFERENCES devops4.students(id),
+    course_id INT REFERENCES devops4.courses(id),
+    enrolled_on DATE DEFAULT CURRENT_DATE
+);
+
+
+
+
+

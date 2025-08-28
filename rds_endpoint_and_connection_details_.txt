@@ -1,0 +1,4 @@
+Endpoint: mydb-instance.123456789012.us-east-1.rds.amazonaws.com
+Port: 5432
+Username: mentor
+Password: [will send in private message]
